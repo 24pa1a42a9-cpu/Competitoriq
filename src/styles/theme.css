@@ -1,0 +1,393 @@
+/* CompetitorIQ - Minimal B2B SaaS Design System */
+/* Strict Rule: White background, Baby Pink accents/selected states, Black text/borders/buttons/charts */
+/* Absolutely NO purple, blue, green, orange, yellow, red, gradients, neon, glow, 3D, or glassmorphism */
+
+:root {
+  /* Surface colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #fbfbfb;
+  --bg-tertiary: #f4f4f5;
+  --bg-subtle: #f9f9f9;
+  
+  /* Baby Pink Palettes (strictly pastel / very light pink highlights) */
+  --pink-lightest: #fdf5f6;
+  --pink-subtle: #fcebee;
+  --pink-surface: #f9d8de;
+  --pink-border: #f4bdc6;
+  --pink-accent: #ea96a5;
+  --pink-deep: #2a1217;
+  
+  /* Text & Border Monochromes */
+  --text-primary: #0a0a0a;
+  --text-secondary: #4a4a4a;
+  --text-muted: #737373;
+  --text-faint: #a3a3a3;
+  --text-inverse: #ffffff;
+  
+  --border-subtle: #e5e5e5;
+  --border-light: #d4d4d4;
+  --border-medium: #a3a3a3;
+  --border-dark: #171717;
+  --border-black: #0a0a0a;
+  
+  /* Shadows - Extremely minimal, flat crisp B2B SaaS feel */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 2px 6px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 6px 16px rgba(0, 0, 0, 0.06);
+  
+  /* Radii */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-full: 9999px;
+  
+  /* Typography */
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.5;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbars - Minimalist Black & White */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-subtle);
+  border-radius: var(--radius-sm);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-medium);
+}
+
+/* Base Component Classes */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: var(--text-primary);
+  color: var(--text-inverse);
+  border-color: var(--text-primary);
+}
+.btn-primary:hover {
+  background-color: #262626;
+  border-color: #262626;
+}
+
+.btn-outline {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  border-color: var(--border-medium);
+}
+.btn-outline:hover {
+  background-color: var(--pink-lightest);
+  border-color: var(--text-primary);
+}
+
+.btn-pink {
+  background-color: var(--pink-subtle);
+  color: var(--text-primary);
+  border-color: var(--pink-border);
+}
+.btn-pink:hover {
+  background-color: var(--pink-surface);
+}
+
+.btn-ghost {
+  background-color: transparent;
+  color: var(--text-secondary);
+  border-color: transparent;
+}
+.btn-ghost:hover {
+  background-color: var(--pink-lightest);
+  color: var(--text-primary);
+}
+
+.btn-sm {
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+/* Cards */
+.card {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.15s ease;
+}
+
+.card:hover {
+  border-color: var(--border-light);
+}
+
+.card-pink {
+  background-color: var(--pink-lightest);
+  border-color: var(--pink-border);
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-subtle);
+  background-color: var(--bg-subtle);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.badge-pink {
+  background-color: var(--pink-subtle);
+  border-color: var(--pink-border);
+  color: var(--text-primary);
+}
+
+.badge-black {
+  background-color: var(--text-primary);
+  border-color: var(--text-primary);
+  color: var(--text-inverse);
+}
+
+.badge-outline {
+  background-color: transparent;
+  border-color: var(--border-medium);
+  color: var(--text-primary);
+}
+
+/* Intelligence Callouts / Formula */
+.intel-quote {
+  border-left: 2px solid var(--text-primary);
+  padding-left: 12px;
+  font-style: italic;
+  color: var(--text-secondary);
+  background-color: var(--pink-lightest);
+  padding: 10px 14px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.intel-story-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 12px 18px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.intel-step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+}
+.intel-step.active {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+.intel-step-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--border-medium);
+}
+.intel-step.active .intel-step-dot {
+  background-color: var(--text-primary);
+  box-shadow: 0 0 0 3px var(--pink-subtle);
+}
+
+/* Layout */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+  background-color: var(--bg-primary);
+  overflow-x: hidden;
+}
+
+.sidebar {
+  width: 264px;
+  min-width: 264px;
+  background-color: var(--bg-primary);
+  border-right: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  z-index: 30;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background-color: var(--bg-primary);
+  overflow-y: auto;
+  height: 100vh;
+}
+
+.content-body {
+  padding: 28px 36px 64px;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Modal and Drawer backdrop */
+.overlay-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: none; /* No glassmorphism */
+}
+
+.drawer-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 540px;
+  max-width: 90vw;
+  background-color: var(--bg-primary);
+  border-left: 1px solid var(--border-dark);
+  z-index: 60;
+  overflow-y: auto;
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Inputs & Form Elements */
+.input-minimal {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  padding: 8px 12px;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  outline: none;
+  transition: border-color 0.15s ease;
+  width: 100%;
+}
+.input-minimal:focus {
+  border-color: var(--text-primary);
+  background-color: var(--pink-lightest);
+}
+
+.input-minimal::placeholder {
+  color: var(--text-faint);
+}
+
+/* Cautious Intelligence Notice Pill */
+.cautious-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-family: var(--font-mono);
+  color: var(--text-secondary);
+  background-color: var(--pink-lightest);
+  border: 1px solid var(--pink-border);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+}
+
+/* Mascot Micro-Animations (Subtle, tasteful B2B SaaS feel) */
+@keyframes radarPulse {
+  0% { transform: scale(0.9); opacity: 0.8; }
+  50% { transform: scale(1.15); opacity: 0.3; }
+  100% { transform: scale(0.9); opacity: 0.8; }
+}
+
+@keyframes radarPulseOuter {
+  0% { transform: scale(0.85); opacity: 0.4; }
+  50% { transform: scale(1.3); opacity: 0.1; }
+  100% { transform: scale(0.85); opacity: 0.4; }
+}
+
+@keyframes gentleFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+.mascot-radar-pulse {
+  transform-origin: 50px 12px;
+  animation: radarPulse 2.8s ease-in-out infinite;
+}
+
+.mascot-radar-pulse-outer {
+  transform-origin: 50px 12px;
+  animation: radarPulseOuter 2.8s ease-in-out infinite;
+}
+
+.agent-mascot-container {
+  transition: transform 0.2s ease;
+}
+
+.agent-mascot-container:hover {
+  transform: translateY(-2px);
+}
+
+.mascot-floating {
+  animation: gentleFloat 4s ease-in-out infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
